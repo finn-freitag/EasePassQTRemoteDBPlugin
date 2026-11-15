@@ -1,0 +1,13 @@
+[package]
+name = "easepass_url_database"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+easepass_url_database_core = { path = "../core" }
+wit-bindgen = "0.63.0"

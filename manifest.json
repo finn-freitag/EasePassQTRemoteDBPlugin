@@ -1,0 +1,12 @@
+{
+  "id": "com.finnfreitag.easepass.url-database",
+  "name": "Database from a URL (read-only)",
+  "version": "1.0.0",
+  "api_version": 1,
+  "description": "Opens an Ease Pass database file from a web address (https://.../name.epdb). The database is read-only: the plugin never uploads anything.",
+  "author": "Finn Freitag",
+  "homepage": "https://github.com/finn-freitag/EasePassQTRemoteDatabaseSourcePlugin",
+  "license": "MIT",
+  "network_hosts": ["*:*"],
+  "permissions": ["storage", "network"]
+}

@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust with the Wasm target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install wasm-tools
+        uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-tools
+
+      - name: Test, build, check and package the plugin
+        run: tools/build.sh
+
+      - name: Upload the package
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin
+          path: |
+            dist/*.epplugin
+            dist/SHA256SUMS
+          if-no-files-found: error
