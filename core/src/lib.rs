@@ -6,7 +6,6 @@
 
 use serde::{Deserialize, Serialize};
 
-pub const PROVIDER_NAME: &str = "Database from a URL (read-only)";
 pub const MAX_URLS: usize = 16;
 pub const MAX_URL_LENGTH: usize = 2048;
 /// Ease Pass can move about 2.5 MiB of database through a plugin in one call (every byte

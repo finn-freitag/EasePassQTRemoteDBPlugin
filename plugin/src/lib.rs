@@ -87,9 +87,6 @@ fn info(database: core::Database) -> DatabaseInfo {
 }
 
 impl Guest for Plugin {
-    fn provider_name() -> String {
-        core::PROVIDER_NAME.into()
-    }
     fn config_schema() -> String {
         core::CONFIG_SCHEMA.into()
     }
